@@ -253,8 +253,8 @@ export const Tracking: React.FC = () => {
                      <Plane className="w-5 h-5 text-slate-500 -mt-2.5 bg-white px-1 rotate-90 md:rotate-0" />
                   </div>
 
-                  <div className="flex items-center gap-4 md:flex-row-reverse md:text-right">
-                     <div className="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center text-accent shrink-0">
+                        <div className="flex items-center gap-4 md:flex-row-reverse md:text-right">
+                            <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0">
                         <MapPin className="w-6 h-6" />
                      </div>
                      <div>
@@ -337,7 +337,7 @@ export const Tracking: React.FC = () => {
                                     {/* Timeline Node */}
                                     <div className={`absolute left-[18px] top-1.5 w-5 h-5 rounded-full border-4 border-white shadow-sm z-10 transition-all duration-300 ${
                                         i === 0 
-                                            ? 'bg-accent ring-4 ring-orange-100 scale-110' 
+                                            ? 'bg-accent ring-4 ring-accent/20 scale-110' 
                                             : 'bg-slate-300 group-hover:bg-brand-blue'
                                     }`}></div>
                                     

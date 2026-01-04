@@ -421,12 +421,12 @@ export const Pricing: React.FC = () => {
 
                     {/* Air Table 2: Bulk */}
                     <div>
-                        <div className="bg-orange-50/50 border border-orange-100 rounded-t-2xl p-5 flex flex-col sm:flex-row justify-between items-center gap-2">
-                            <div className="flex items-center gap-3 text-accent font-bold">
+                            <div className="bg-accent/10 border border-accent/20 rounded-t-2xl p-5 flex flex-col sm:flex-row justify-between items-center gap-2">
+                                <div className="flex items-center gap-3 text-accent font-bold">
                                 <div className="p-2 bg-white rounded-lg shadow-sm"><Scale className="w-5 h-5" /></div>
                                 Bảng giá Hàng Nặng ({'>'}21kg)
                             </div>
-                             <div className="text-xs text-orange-800 font-bold bg-white px-3 py-1.5 rounded-full border border-orange-200 shadow-sm">
+                             <div className="text-xs text-accent font-bold bg-white px-3 py-1.5 rounded-full border border-accent/20 shadow-sm">
                                  Đơn vị tính: {currentCountry?.currency} / KG
                             </div>
                         </div>
@@ -435,7 +435,7 @@ export const Pricing: React.FC = () => {
                             <div className="overflow-x-auto">
                             <table className="w-full text-left border-collapse min-w-[600px]">
                                 <thead>
-                                    <tr className="bg-gradient-to-r from-accent to-orange-400 text-white">
+                                            <tr className="bg-gradient-to-r from-brand-blue to-accent text-white">
                                         <th className="p-4 text-sm font-bold uppercase w-1/4 text-center">Mức cân (KG)</th>
                                         <th className="p-4 text-sm font-bold uppercase w-1/4 text-center border-l border-white/20">Hàng Thường</th>
                                         <th className="p-4 text-sm font-bold uppercase w-1/4 text-center border-l border-white/20">Hàng Khó</th>
@@ -443,8 +443,8 @@ export const Pricing: React.FC = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="text-slate-600 divide-y divide-slate-100 text-center text-sm">
-                                    {AIR_BULK_TIERS.map((tier, i) => (
-                                        <tr key={i} className="hover:bg-orange-50/30 transition-colors">
+                                        {AIR_BULK_TIERS.map((tier, i) => (
+                                        <tr key={i} className="hover:bg-accent/10 transition-colors">
                                             <td className="p-4 font-bold text-brand-navy bg-slate-50/30 border-r border-slate-100 text-base">
                                                 {tier}
                                             </td>
@@ -568,11 +568,11 @@ export const Pricing: React.FC = () => {
                     </div>
                     
                     {/* Important Note Footer */}
-                    <div className="bg-orange-50 p-6 border-t border-orange-100 flex items-start gap-4">
-                        <AlertTriangle className="w-6 h-6 text-orange-500 shrink-0 mt-0.5" />
+                    <div className="bg-accent/6 p-6 border-t border-accent/10 flex items-start gap-4">
+                        <AlertTriangle className="w-6 h-6 text-orange-muted shrink-0 mt-0.5" />
                         <div>
-                            <h4 className="font-bold text-orange-700 text-sm uppercase mb-1">Lưu ý quan trọng:</h4>
-                            <p className="text-sm text-orange-800 leading-relaxed">
+                            <h4 className="font-bold text-accent text-sm uppercase mb-1">Lưu ý quan trọng:</h4>
+                            <p className="text-sm text-slate-700 leading-relaxed">
                                 Giá tra phụ thu vui lòng liên hệ bộ phận chứng từ hoặc Ops EZWAY để được xác nhận chính xác. 
                                 <br/>
                                 <strong className="font-bold">Quy định chung:</strong> Sẽ phụ thu theo số kg <span className="underline">FULL THÙNG</span> (Gross Weight của cả kiện), không phụ thu trên số kg riêng lẻ của từng mặt hàng bên trong.

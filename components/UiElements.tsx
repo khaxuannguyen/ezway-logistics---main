@@ -25,8 +25,8 @@ export const Button: React.FC<ButtonProps> = ({
     // Primary: Brand Blue - Professional Actions
     primary: "bg-brand-blue hover:bg-blue-700 text-white shadow-lg shadow-blue-500/20 border border-transparent hover:-translate-y-0.5",
     
-    // CTA: Brand Orange - High Priority / Conversion
-    cta: "bg-accent hover:bg-accent-hover text-white shadow-lg shadow-orange-500/20 border border-transparent hover:-translate-y-0.5",
+    // CTA: Orange Soft (primary conversion button)
+    cta: "bg-orange-muted text-white shadow-lg shadow-orange-500/12 border border-transparent hover:bg-[#f97316] hover:-translate-y-0.5",
     
     // Secondary: Slate - Low Priority
     secondary: "bg-slate-100 hover:bg-slate-200 text-slate-700 border border-transparent",
@@ -39,8 +39,8 @@ export const Button: React.FC<ButtonProps> = ({
     
     ghost: "bg-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-900",
 
-    // Teal variant
-    teal: "bg-brand-teal hover:bg-teal-700 text-white shadow-lg shadow-teal-500/20 border border-transparent hover:-translate-y-0.5",
+    // Teal variant (used for secondary important actions like Tra cứu)
+    teal: "bg-accent hover:bg-accent-hover text-white shadow-lg shadow-teal-500/12 border border-transparent hover:-translate-y-0.5",
   };
 
   const sizes = {
@@ -131,7 +131,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({ title, subtitle, a
   return (
     <div className={`mb-16 ${align === 'center' ? 'text-center mx-auto' : 'text-left'} max-w-3xl ${className}`}>
       {subtitle && (
-        <div className={`inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${light ? 'bg-white/10 text-orange-200 border border-white/10' : 'bg-blue-50 text-brand-blue border border-blue-100'}`}>
+        <div className={`inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${light ? 'bg-white/10 text-accent/70 border border-white/10' : 'bg-blue-50 text-brand-blue border border-blue-100'}`}>
           <span className={`w-2 h-2 rounded-full ${light ? 'bg-accent' : 'bg-brand-blue'}`}></span>
           {subtitle}
         </div>

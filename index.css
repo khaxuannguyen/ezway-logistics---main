@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: #1e293b;
+  color: #475569; /* neutral body text */
+  background-color: #f8fafc; /* page background (neutral) */
 }
 
 .glass {

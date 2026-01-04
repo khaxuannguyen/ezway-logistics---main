@@ -64,12 +64,12 @@ export const BuyingService: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/90 to-slate-900"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/20 border border-orange-500/50 text-orange-400 font-bold text-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/8 border border-accent/20 text-accent font-bold text-sm mb-6">
             <Zap className="w-4 h-4" /> Dịch vụ mua hộ trọn gói A-Z
           </div>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
             Săn Sale Hàng Mỹ <br/> 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-white">Giá Về Tay Cực Rẻ</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-accent">Giá Về Tay Cực Rẻ</span>
           </h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-8">
             Bạn chỉ cần gửi link, EZWAY sẽ lo toàn bộ thủ tục thanh toán, thuế Mỹ, vận chuyển và thông quan. Tỷ giá tốt nhất thị trường.
@@ -275,9 +275,9 @@ export const BuyingService: React.FC = () => {
                 </a>
              ))}
           </div>
-          <div className="text-center mt-12">
-             <Button to="/lien-he" size="xl" variant="primary" icon className="shadow-orange-500/25">Gửi Link Để Nhận Báo Giá</Button>
-          </div>
+             <div className="text-center mt-12">
+             <Button to="/lien-he" size="xl" variant="primary" icon className="shadow-teal-500/25">Gửi Link Để Nhận Báo Giá</Button>
+            </div>
         </div>
       </div>
     </>
