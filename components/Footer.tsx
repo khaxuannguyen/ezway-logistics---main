@@ -109,10 +109,10 @@ export const Footer: React.FC = () => {
               <li className="flex items-center space-x-3 group">
                 <Phone className="h-5 w-5 text-accent shrink-0 group-hover:text-white transition-colors" />
                 <span className="group-hover:text-white transition-colors font-bold">
-                  1900 1234 567
+                  0589899229
                 </span>
                 <a
-                  href="https://wa.me/19001234567"
+                  href="https://wa.me/0589899229"
                   target="_blank"
                   rel="noreferrer"
                   className="ml-3 inline-flex items-center gap-2 text-sm text-accent hover:text-white transition-colors"
@@ -139,7 +139,7 @@ export const Footer: React.FC = () => {
               <li className="flex items-center space-x-3 group">
                 <Mail className="h-5 w-5 text-accent shrink-0 group-hover:text-white transition-colors" />
                 <span className="group-hover:text-white transition-colors">
-                  support@ezway.vn
+                  Info@ezway.vn
                 </span>
               </li>
             </ul>
