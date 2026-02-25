@@ -1,24 +1,21 @@
 import React from "react";
-import { Hero } from "../components/Hero";
 import { Section, SectionHeader, Card, Button } from "../components/UiElements";
+import { TrackingForm } from "../features/tracking";
 import {
   ShoppingCart,
   Plane,
   FileCheck,
   Truck,
-  Users,
   Globe,
   Award,
   Headphones,
   ArrowRight,
   Shield,
-  Box,
   TrendingUp,
   CheckCircle2,
-  Map,
   Zap,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SERVICES = [
   {
@@ -92,9 +89,64 @@ const PARTNERS = [
 ];
 
 export const Home: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleTrackingRedirect = (trackingCode: string) => {
+    const code = trackingCode.trim();
+    if (!code) return;
+    navigate(`/tra-cuu?code=${encodeURIComponent(code)}`);
+  };
+
   return (
     <>
-      <Hero />
+      {/* Hero Section with Tracking */}
+      <div className="relative min-h-[85vh] flex items-center bg-gradient-to-br from-brand-blue/6 via-white to-surface overflow-hidden py-16 lg:py-24">
+        {/* Background elements from Hero */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-[100px] mix-blend-multiply animate-blob"></div>
+          <div className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] bg-orange-muted/10 rounded-full blur-[100px] mix-blend-multiply animate-blob animation-delay-2000"></div>
+          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+          <div
+            className="absolute inset-0 opacity-[0.4]"
+            style={{
+              backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)",
+              backgroundSize: "32px 32px",
+            }}
+          ></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+          <div className="text-center space-y-8">
+            <div className="inline-flex items-center space-x-2 bg-white border border-blue-100 rounded-full px-4 py-2 text-brand-blue text-sm font-bold shadow-sm animate-fade-in-up">
+              <span className="flex h-2 w-2 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent/60 opacity-60"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+              </span>
+              <span className="tracking-wide text-xs uppercase">
+                Giải pháp Logistics Toàn Cầu
+              </span>
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-brand-navy tracking-tight">
+              <span className="block">Vận chuyển</span>
+              <span className="block mb-6">Quốc Tế</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-accent text-2xl md:text-3xl lg:text-4xl mt-3 pb-1 leading-[1.3]">
+                Đơn giản - An toàn & Tiết Kiệm
+              </span>
+            </h1>
+
+            <p className="text-base lg:text-lg text-body max-w-xl mx-auto leading-[1.7] mb-10">
+              Dịch vụ mua hộ và vận chuyển chuyên nghiệp. Tỷ giá tốt nhất thị
+              trường, cam kết bảo hiểm 100% giá trị hàng hóa.
+            </p>
+
+            {/* Tracking Form */}
+            <div className="max-w-2xl mx-auto">
+              <TrackingForm onSearch={handleTrackingRedirect} loading={false} />
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Trusted By / Partners Strip */}
       <div className="border-b border-slate-100 bg-white py-12 overflow-hidden relative">

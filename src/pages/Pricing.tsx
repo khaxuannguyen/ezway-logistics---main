@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Section, SectionHeader, Button, Card } from "../components/UiElements";
+import { Section, SectionHeader, Button } from "../components/UiElements";
 import {
   Info,
-  Download,
-  Phone,
   Plane,
   Ship,
-  AlertCircle,
-  Search,
-  MapPin,
   ChevronDown,
-  ChevronRight,
   Scale,
-  ArrowDown,
   Calculator,
   Package,
   Check,

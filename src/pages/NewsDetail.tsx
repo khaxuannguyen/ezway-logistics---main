@@ -1,15 +1,13 @@
 import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { Section, Button, Card } from "../components/UiElements";
+import { Button } from "../components/UiElements";
 import {
   Calendar,
   User,
   ArrowLeft,
-  Share2,
   Facebook,
   Twitter,
   Linkedin,
-  Tag,
 } from "lucide-react";
 import { NEWS_POSTS } from "./News";
 

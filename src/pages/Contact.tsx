@@ -1,6 +1,6 @@
 import React from "react";
 import { Section, Button, Card } from "../components/UiElements";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 export const Contact: React.FC = () => {
   return (
