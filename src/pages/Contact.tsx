@@ -97,7 +97,7 @@ export const Contact: React.FC = () => {
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium"
+                    className="w-full px-4 py-3.5 rounded-xl bg-white text-slate-900 placeholder:text-slate-400 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium"
                     placeholder="Nguyễn Văn A"
                   />
                 </div>
@@ -107,7 +107,7 @@ export const Contact: React.FC = () => {
                   </label>
                   <input
                     type="tel"
-                    className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium"
+                    className="w-full px-4 py-3.5 rounded-xl bg-white text-slate-900 placeholder:text-slate-400 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium"
                     placeholder="0909..."
                   />
                 </div>
@@ -119,7 +119,7 @@ export const Contact: React.FC = () => {
                 </label>
                 <input
                   type="email"
-                  className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium"
+                  className="w-full px-4 py-3.5 rounded-xl bg-white text-slate-900 placeholder:text-slate-400 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium"
                   placeholder="email@example.com"
                 />
               </div>
@@ -130,7 +130,7 @@ export const Contact: React.FC = () => {
                 </label>
                 <textarea
                   rows={5}
-                  className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium resize-none"
+                  className="w-full px-4 py-3.5 rounded-xl bg-white text-slate-900 placeholder:text-slate-400 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium resize-none"
                   placeholder="Tôi muốn gửi hàng đi Mỹ..."
                 ></textarea>
               </div>

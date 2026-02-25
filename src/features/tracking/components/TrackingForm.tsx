@@ -39,7 +39,7 @@ export const TrackingForm: React.FC<TrackingFormProps> = ({
             onChange={(e) => setTrackingCode(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="Nhập mã tracking..."
-            className="w-full px-6 py-4 text-lg border-2 border-gray-200 rounded-lg focus:border-brand-blue focus:outline-none transition-colors"
+            className="w-full px-6 py-4 text-lg bg-white text-slate-900 placeholder:text-slate-400 border-2 border-gray-200 rounded-lg focus:border-brand-blue focus:outline-none transition-colors"
             disabled={loading}
           />
         </div>
