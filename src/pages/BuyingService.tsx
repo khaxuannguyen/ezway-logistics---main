@@ -5,12 +5,9 @@ import {
   ShoppingBag,
   CreditCard,
   PackageCheck,
-  Truck,
-  ArrowRight,
   Calculator,
   Zap,
   ShieldCheck,
-  AlertCircle,
   X,
   Check,
 } from "lucide-react";

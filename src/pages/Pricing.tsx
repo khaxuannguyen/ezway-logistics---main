@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Section, SectionHeader, Button, Card } from "../components/UiElements";
+import { Section, SectionHeader, Button } from "../components/UiElements";
 import {
   Info,
-  Download,
-  Phone,
   Plane,
   Ship,
-  AlertCircle,
-  Search,
-  MapPin,
   ChevronDown,
-  ChevronRight,
   Scale,
-  ArrowDown,
   Calculator,
   Package,
   Check,
@@ -424,7 +417,7 @@ export const Pricing: React.FC = () => {
                       </label>
                       <div className="relative">
                         <select
-                          className="w-full appearance-none bg-slate-50 border border-slate-200 text-slate-900 text-base rounded-xl focus:ring-brand-teal focus:border-brand-teal block w-full p-3.5 pr-10 font-medium cursor-pointer hover:bg-slate-100 transition-colors"
+                          className="w-full appearance-none bg-white text-slate-900 placeholder:text-slate-400 border border-slate-200 text-base rounded-xl focus:ring-brand-teal focus:border-brand-teal block w-full p-3.5 pr-10 font-medium cursor-pointer hover:bg-slate-50 transition-colors"
                           value={activeTab}
                           onChange={(e) => setActiveTab(e.target.value)}
                         >
@@ -470,7 +463,7 @@ export const Pricing: React.FC = () => {
                           onChange={(e) =>
                             setCalcWeight(parseFloat(e.target.value))
                           }
-                          className="bg-slate-50 border border-slate-200 text-slate-900 text-base rounded-xl focus:ring-brand-teal focus:border-brand-teal block w-full p-3.5 font-bold"
+                          className="bg-white text-slate-900 placeholder:text-slate-400 border border-slate-200 text-base rounded-xl focus:ring-brand-teal focus:border-brand-teal block w-full p-3.5 font-bold"
                         />
                         <span className="absolute right-4 top-3.5 text-slate-400 font-medium">
                           KG
@@ -531,7 +524,7 @@ export const Pricing: React.FC = () => {
                           onChange={(e) =>
                             setCalcValue(parseFloat(e.target.value))
                           }
-                          className="bg-white border border-brand-teal/30 text-slate-900 text-base rounded-xl focus:ring-brand-teal focus:border-brand-teal block w-full p-3.5 pl-8 font-bold shadow-sm"
+                          className="bg-white text-slate-900 placeholder:text-slate-400 border border-brand-teal/30 text-base rounded-xl focus:ring-brand-teal focus:border-brand-teal block w-full p-3.5 pl-8 font-bold shadow-sm"
                           placeholder="VD: 500"
                         />
                       </div>

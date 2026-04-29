@@ -1,8 +1,92 @@
-import React from "react";
+import React, { useState } from "react";
 import { Section, Button, Card } from "../components/UiElements";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 export const Contact: React.FC = () => {
+  const [name, setName] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+
+  const [loading, setLoading] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    setLoading(true);
+    setSuccess(false);
+    setError(null);
+
+    const payload = {
+      name,
+      phone,
+      email,
+      message,
+    };
+
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbyIut-ZWsAie8jxXfNBPor31x4KyZqi5y7Y9oenKj8Ev6wuFMAO_YwXBXmEYaNVjfRaVg/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        },
+      );
+
+      const rawText = await response.text();
+      let status = "";
+
+      try {
+        const parsed = JSON.parse(rawText) as { status?: string };
+        status = parsed.status ?? "";
+      } catch {
+        status = rawText;
+      }
+
+      if (response.ok && status.toLowerCase().includes("success")) {
+        setSuccess(true);
+        setName("");
+        setPhone("");
+        setEmail("");
+        setMessage("");
+        setLoading(false);
+        return;
+      }
+
+      setError("Có lỗi xảy ra");
+      setLoading(false);
+    } catch {
+      try {
+        await fetch(
+          "https://script.google.com/macros/s/AKfycbyIut-ZWsAie8jxXfNBPor31x4KyZqi5y7Y9oenKj8Ev6wuFMAO_YwXBXmEYaNVjfRaVg/exec",
+          {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+            body: JSON.stringify(payload),
+          },
+        );
+
+        setSuccess(true);
+        setName("");
+        setPhone("");
+        setEmail("");
+        setMessage("");
+        setLoading(false);
+      } catch {
+        setError("Có lỗi xảy ra");
+        setLoading(false);
+      }
+    }
+  };
+
   return (
     <>
       <div className="bg-slate-50 pt-24 pb-12">
@@ -89,7 +173,19 @@ export const Contact: React.FC = () => {
               Điền thông tin bên dưới, chúng tôi sẽ liên hệ lại ngay.
             </p>
 
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              {success && (
+                <div className="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-green-700 text-sm font-medium">
+                  Gửi thông tin thành công. Chúng tôi sẽ liên hệ với bạn sớm.
+                </div>
+              )}
+
+              {error && (
+                <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-700 text-sm font-medium">
+                  {error}
+                </div>
+              )}
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="block text-sm font-semibold text-slate-700">
@@ -97,8 +193,11 @@ export const Contact: React.FC = () => {
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full px-4 py-3.5 rounded-xl bg-white text-slate-900 placeholder:text-slate-400 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium"
                     placeholder="Nguyễn Văn A"
+                    required
                   />
                 </div>
                 <div className="space-y-2">
@@ -107,8 +206,11 @@ export const Contact: React.FC = () => {
                   </label>
                   <input
                     type="tel"
-                    className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="w-full px-4 py-3.5 rounded-xl bg-white text-slate-900 placeholder:text-slate-400 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium"
                     placeholder="0909..."
+                    required
                   />
                 </div>
               </div>
@@ -119,8 +221,11 @@ export const Contact: React.FC = () => {
                 </label>
                 <input
                   type="email"
-                  className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-4 py-3.5 rounded-xl bg-white text-slate-900 placeholder:text-slate-400 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium"
                   placeholder="email@example.com"
+                  required
                 />
               </div>
 
@@ -130,8 +235,11 @@ export const Contact: React.FC = () => {
                 </label>
                 <textarea
                   rows={5}
-                  className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium resize-none"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="w-full px-4 py-3.5 rounded-xl bg-white text-slate-900 placeholder:text-slate-400 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium resize-none"
                   placeholder="Tôi muốn gửi hàng đi Mỹ..."
+                  required
                 ></textarea>
               </div>
 
@@ -139,8 +247,16 @@ export const Contact: React.FC = () => {
                 type="submit"
                 size="lg"
                 className="w-full justify-center text-lg mt-2"
+                disabled={loading}
               >
-                Gửi yêu cầu tư vấn
+                {loading ? (
+                  <span className="inline-flex items-center gap-2">
+                    <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    Đang gửi...
+                  </span>
+                ) : (
+                  "Gửi yêu cầu tư vấn"
+                )}
               </Button>
             </form>
           </Card>

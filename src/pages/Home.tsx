@@ -1,24 +1,21 @@
 import React from "react";
-import { Hero } from "../components/Hero";
 import { Section, SectionHeader, Card, Button } from "../components/UiElements";
+import { TrackingForm } from "../features/tracking";
 import {
   ShoppingCart,
   Plane,
   FileCheck,
   Truck,
-  Users,
   Globe,
   Award,
   Headphones,
   ArrowRight,
   Shield,
-  Box,
   TrendingUp,
   CheckCircle2,
-  Map,
   Zap,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SERVICES = [
   {
@@ -92,9 +89,159 @@ const PARTNERS = [
 ];
 
 export const Home: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleTrackingRedirect = (trackingCode: string) => {
+    const code = trackingCode.trim();
+    if (!code) return;
+    navigate(`/tra-cuu?code=${encodeURIComponent(code)}`);
+  };
+
   return (
     <>
-      <Hero />
+      {/* Hero Section with Tracking */}
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-blue to-accent bg-[length:180%_180%] animate-pulse" />
+        <div className="absolute inset-0 bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/World_map_-_low_resolution.svg/1600px-World_map_-_low_resolution.svg.png')] bg-center bg-no-repeat bg-contain opacity-10" />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-15" />
+
+        <div className="absolute top-[-8%] right-[-5%] w-[520px] h-[520px] bg-blue-300/20 rounded-full blur-[120px] animate-blob" />
+        <div className="absolute bottom-[-15%] left-[-8%] w-[480px] h-[480px] bg-accent/20 rounded-full blur-[120px] animate-blob animation-delay-2000" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-16">
+          <div className="text-center text-white space-y-8">
+            <div className="inline-flex items-center space-x-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 text-white text-sm font-bold shadow-sm animate-fade-in-up backdrop-blur-sm">
+              <span className="flex h-2 w-2 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+              </span>
+              <span className="tracking-wide text-xs uppercase">
+                International Logistics Platform
+              </span>
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight">
+              <span className="block">Vận chuyển quốc tế</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-100 via-white to-teal-100 mt-3 pb-1">
+                Nhanh hơn, an toàn hơn, minh bạch hơn
+              </span>
+            </h1>
+
+            <p className="text-base lg:text-lg text-blue-100 max-w-2xl mx-auto leading-[1.8]">
+              Tối ưu chuỗi vận chuyển toàn cầu với tracking thời gian thực, quy
+              trình chuẩn quốc tế và bảo hiểm hàng hóa toàn diện.
+            </p>
+
+            <div className="max-w-2xl mx-auto bg-white/95 backdrop-blur rounded-2xl p-3 shadow-2xl border border-white/60">
+              <TrackingForm onSearch={handleTrackingRedirect} loading={false} />
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+              <Button
+                to="/gia-cuoc"
+                variant="cta"
+                size="lg"
+                className="shadow-xl shadow-orange-500/30 hover:-translate-y-0.5 transition-transform"
+              >
+                Nhận báo giá ngay
+              </Button>
+              <Button
+                to="/dich-vu"
+                variant="white"
+                size="lg"
+                className="text-brand-navy border-white hover:border-white hover:bg-white/90"
+              >
+                Khám phá dịch vụ
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefit Cards */}
+      <section className="relative z-10 -mt-8 md:-mt-10 pb-10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              {
+                icon: Globe,
+                title: "Global shipping",
+                desc: "Kết nối vận chuyển đến Mỹ, Úc, EU và nhiều thị trường lớn.",
+                color: "text-blue-600 bg-blue-50",
+              },
+              {
+                icon: Zap,
+                title: "Real-time tracking",
+                desc: "Theo dõi trạng thái vận đơn theo thời gian thực, minh bạch 24/7.",
+                color: "text-accent bg-accent/10",
+              },
+              {
+                icon: Shield,
+                title: "Secure & insured",
+                desc: "Bảo hiểm hàng hóa, quy trình đóng gói chuẩn an toàn quốc tế.",
+                color: "text-green-600 bg-green-50",
+              },
+              {
+                icon: TrendingUp,
+                title: "Competitive pricing",
+                desc: "Giá cước tối ưu theo tuyến vận chuyển, không phát sinh phí ẩn.",
+                color: "text-orange-500 bg-orange-50",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl border border-slate-100 p-6 shadow-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <div
+                  className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${item.color}`}
+                >
+                  <item.icon className="w-6 h-6" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Metrics */}
+      <section className="pb-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="bg-white border border-slate-100 rounded-2xl shadow-soft p-6 md:p-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+              <div className="py-2">
+                <p className="text-3xl md:text-4xl font-black text-brand-navy">
+                  10,000+
+                </p>
+                <p className="text-slate-600 mt-2 font-medium">
+                  Shipments completed
+                </p>
+              </div>
+              <div className="py-2 sm:border-x sm:border-slate-100">
+                <p className="text-3xl md:text-4xl font-black text-brand-blue">
+                  98%
+                </p>
+                <p className="text-slate-600 mt-2 font-medium">
+                  On-time delivery rate
+                </p>
+              </div>
+              <div className="py-2">
+                <p className="text-3xl md:text-4xl font-black text-accent">
+                  24/7
+                </p>
+                <p className="text-slate-600 mt-2 font-medium">
+                  Customer support
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Trusted By / Partners Strip */}
       <div className="border-b border-slate-100 bg-white py-12 overflow-hidden relative">
