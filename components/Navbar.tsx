@@ -36,13 +36,13 @@ export const Navbar: React.FC = () => {
         <div className="max-w-[1200px] mx-auto px-6 flex justify-between items-center">
           <div className="flex gap-6">
             <span className="flex items-center hover:text-white transition-colors cursor-default">
-              <Phone className="w-3.5 h-3.5 mr-2 text-accent" /> 0589899229
+              <Phone className="w-3.5 h-3.5 mr-2 text-accent" /> 0378899543
             </span>
             <span className="flex items-center hover:text-white transition-colors cursor-default">
               <Mail className="w-3.5 h-3.5 mr-2 text-accent" /> support@ezway.vn
             </span>
             <a
-              href="https://wa.me/0589899229"
+              href="https://wa.me/0378899543"
               target="_blank"
               rel="noreferrer"
               className="flex items-center hover:text-white transition-colors"
@@ -183,8 +183,8 @@ export const Navbar: React.FC = () => {
                   Tra cứu đơn hàng
                 </Button>
                 <div className="flex justify-center gap-6 pt-2 text-slate-500">
-                  <a href="tel:0589899229" className="flex items-center">
-                    <Phone className="w-4 h-4 mr-2" /> ...0589899229
+                  <a href="tel:0378899543" className="flex items-center">
+                    <Phone className="w-4 h-4 mr-2" /> ...0378899543
                   </a>
                 </div>
               </div>

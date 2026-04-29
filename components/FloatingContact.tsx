@@ -6,7 +6,7 @@ export const FloatingContact: React.FC = () => {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4 items-end">
       {/* Zalo Button */}
       <a
-        href="https://zalo.me/0589899229"
+        href="https://zalo.me/0378899543"
         target="_blank"
         rel="noreferrer"
         className="group flex items-center justify-center w-14 h-14 bg-blue-600 rounded-full shadow-lg shadow-blue-600/30 hover:scale-110 transition-transform duration-300 relative"
@@ -20,7 +20,7 @@ export const FloatingContact: React.FC = () => {
 
       {/* Hotline Button with Pulse Effect */}
       <a
-        href="tel:0589899229"
+        href="tel:0378899543"
         className="group flex items-center justify-center w-14 h-14 bg-brand-teal rounded-full shadow-lg shadow-teal-500/30 hover:scale-110 transition-transform duration-300 relative"
         title="Gọi Hotline"
       >
@@ -28,13 +28,13 @@ export const FloatingContact: React.FC = () => {
         <span className="absolute inline-flex h-full w-full rounded-full bg-brand-teal opacity-75 animate-ping"></span>
 
         <span className="absolute right-full mr-3 bg-white text-slate-700 text-xs font-bold px-3 py-1.5 rounded-lg shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-          0589899229
+          0378899543
         </span>
         <Phone className="w-6 h-6 text-white relative z-10" />
       </a>
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/0589899229"
+        href="https://wa.me/0378899543"
         target="_blank"
         rel="noreferrer"
         className="group flex items-center justify-center w-14 h-14 bg-green-500 rounded-full shadow-lg shadow-green-500/30 hover:scale-110 transition-transform duration-300 relative"
