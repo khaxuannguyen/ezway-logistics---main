@@ -117,8 +117,12 @@ export const Contact: React.FC = () => {
                       Trụ sở chính
                     </h3>
                     <p className="text-slate-600 mt-1">
+<<<<<<< HEAD
                       112/40 Đường Thạnh Xuân 22, Phường Thới An, Quận 12, TP Hồ
                       Chí Minh
+=======
+                      112/40 Đường Thạnh Xuân 22, Phường Thới An, Quận 12{" "}
+>>>>>>> 841f893566d3338f285e93cc15bdff193c968eb7
                     </p>
                   </div>
                 </div>
@@ -132,7 +136,7 @@ export const Contact: React.FC = () => {
                       Hotline
                     </h3>
                     <p className="text-slate-600 mt-1 font-mono text-lg">
-                      05.8989.9229
+                      037.8899.543
                     </p>
                     <p className="text-slate-500 text-sm mt-1">
                       (08:00 - 17:30, Thứ 2 - Thứ 7)

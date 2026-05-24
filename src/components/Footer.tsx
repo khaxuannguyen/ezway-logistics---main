@@ -110,10 +110,17 @@ export const Footer: React.FC = () => {
               <li className="flex items-center space-x-3 group">
                 <Phone className="h-5 w-5 text-accent shrink-0 group-hover:text-white transition-colors" />
                 <span className="group-hover:text-white transition-colors font-bold">
+<<<<<<< HEAD
                   0523666966
                 </span>
                 <a
                   href="https://wa.me/0523666966"
+=======
+                  0378899543
+                </span>
+                <a
+                  href="https://wa.me/0378899543"
+>>>>>>> 841f893566d3338f285e93cc15bdff193c968eb7
                   target="_blank"
                   rel="noreferrer"
                   className="ml-3 inline-flex items-center gap-2 text-sm text-accent hover:text-white transition-colors"
