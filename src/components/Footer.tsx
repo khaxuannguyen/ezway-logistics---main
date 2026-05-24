@@ -103,16 +103,17 @@ export const Footer: React.FC = () => {
               <li className="flex items-start space-x-3 group">
                 <MapPin className="h-5 w-5 text-accent shrink-0 group-hover:text-white transition-colors" />
                 <span className="group-hover:text-white transition-colors">
-                  123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh
+                  112/40 Đường Thạnh Xuân 22, Phường Thới An, Quận 12, TP Hồ Chí
+                  Minh
                 </span>
               </li>
               <li className="flex items-center space-x-3 group">
                 <Phone className="h-5 w-5 text-accent shrink-0 group-hover:text-white transition-colors" />
                 <span className="group-hover:text-white transition-colors font-bold">
-                  0589899229
+                  0523666966
                 </span>
                 <a
-                  href="https://wa.me/0589899229"
+                  href="https://wa.me/0523666966"
                   target="_blank"
                   rel="noreferrer"
                   className="ml-3 inline-flex items-center gap-2 text-sm text-accent hover:text-white transition-colors"

@@ -117,7 +117,8 @@ export const Contact: React.FC = () => {
                       Trụ sở chính
                     </h3>
                     <p className="text-slate-600 mt-1">
-                      123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh
+                      112/40 Đường Thạnh Xuân 22, Phường Thới An, Quận 12, TP Hồ
+                      Chí Minh
                     </p>
                   </div>
                 </div>
